@@ -1,0 +1,9 @@
+# for local development
+version: '3.7'
+services:
+    dist:
+        build:
+            context: .
+            target: 'prod'
+        ports:
+            - '18107:80'
