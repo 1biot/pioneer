@@ -28,6 +28,13 @@ const appStateStore = useAppStateStore()
       icon="ri-node-tree"
     />
     <SidebarMenuItem
+        :show="appStateStore.isConnected"
+        :disabled="!appStateStore.hasSysLogAccess"
+        title="LogDiscover"
+        link="/logs"
+        icon="ri-folder-history-line"
+    />
+    <SidebarMenuItem
       :show="true"
       head="System"
       title="Settings"

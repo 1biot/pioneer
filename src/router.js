@@ -14,6 +14,7 @@ const beforeEnterAuth = (to, from, next) => {
 
 const Dashboard = () => import('./views/Dashboard.vue')
 const Connect = () => import('./views/Connect.vue')
+const Logs = () => import('./views/Logs.vue')
 const NotFound = () => import('./views/NotFound.vue')
 const Settings = () => import('./views/Settings.vue')
 const TopicTree = () => import('./views/TopicTree.vue')
@@ -36,6 +37,12 @@ const topicTreeRoute = {
   beforeEnter: beforeEnterAuth
 }
 
+const logsRoute = {
+  path: '/logs',
+  component: Logs,
+  beforeEnter: beforeEnterAuth
+}
+
 const settingsRoute = {
   path: '/settings',
   component: Settings
@@ -52,6 +59,7 @@ export default createRouter({
     connectRoute,
     dashboardRoute,
     topicTreeRoute,
+    logsRoute,
     settingsRoute,
     notFoundRoute
   ]
